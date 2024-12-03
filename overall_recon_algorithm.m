@@ -103,7 +103,7 @@ xfbp = fbp_dbt(Gtr,btg,igr, g,'hann75');
 toc
 xfbp2 = xfbp(:,1:900,:);
 % xfbp2 = xfbp(:,1:1530,:);
-name = '/Users/patron/Downloads/12.recondbt';
+name = '/Users/patron/Downloads/12.recondbt/0.06x25_withFSM_total_EN2000_120umMC203040H_blankimgcorr_postlog_SA75_3000x900x49.raw';
 fin = fopen(name, 'w+');
 cnt = fwrite(fin,xfbp2,'float');
 fclose(fin);
