@@ -23,7 +23,7 @@ for ii = 1:25
     % 计算衰减数据 g_temp
     g_temp = -log(I_norm);  % 求对数，得到衰减值
     g(:,:,ii) = g_temp;  % 存储当前视角的衰减数据
-    I0(:,:,ii) = blank;
+    I0(:,:,ii) = blank; % 很关键的一步，在ml算法中会用到
     %proj = I0 * exp(-g);%投影数据吗
     % 设置 I0 为当前视角的 blank 图像
     %I0 = blank;  % 每个视角对应的 I0 即为该视角的 blank 图像
