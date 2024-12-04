@@ -11,12 +11,12 @@ for tt = 1:30
     % 读取第一个文件
     path = [path1 num2str(1) path3]; & 这个1是第一个数据文件后面的索引
     fin = fopen(path, 'r');
-    tempimg = fread(fin, 71*71, 'float');
+    tempimg = fread(fin, 3000*1504, 'float');
     fclose(fin);
-    img0 = reshape(tempimg, 71, 71);
+    img0 = reshape(tempimg, 3000, 1504);
     saroi = img0(11:61, 11:61); % 提取ROI
     % 读取剩余文件（从2到21）&这个不同的文件集有不同的索引，到时候再说吧
-    for ii = 2:21
+    for ii = 2:11
         path = [path1 num2str(ii) path3];
         fin = fopen(path, 'r');
         tempimg = fread(fin, 71*71, 'float');
@@ -25,7 +25,7 @@ for tt = 1:30
         saroi = cat(3, saroi, img(11:61, 11:61)); % 拼接ROI
     end
     % 读取文件32到49
-    for ii = 33:49
+    for ii = 26:49
         path = [path1 num2str(ii) path3];
         fin = fopen(path, 'r');
         tempimg = fread(fin, 71*71, 'float');
@@ -44,7 +44,7 @@ for tt = 1:30
     img00 = reshape(tempimg, 71, 71);
     sproi = img00(11:61, 11:61); % 提取ROI
     % 读取文件（从2到21）
-    for ii = 22:32
+    for ii = 12:25
         path = [path4 num2str(ii) path6];
         fin2 = fopen(path, 'r');
         tempimg = fread(fin2, 71*71, 'float');
